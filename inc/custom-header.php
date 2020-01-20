@@ -89,17 +89,6 @@ function freesn_admin_header_style() {
 		.appearance_page_custom-header #headimg {
 			border: none;
 		}
-		#headimg h1,
-		#desc {
-		}
-		#headimg h1 {
-		}
-		#headimg h1 a {
-		}
-		#desc {
-		}
-		#headimg img {
-		}
 	</style>
 <?php
 }
