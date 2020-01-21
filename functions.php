@@ -159,40 +159,63 @@ function the_excerpt_max_charlength($charlength, $permalink) {
 }
 
 // New post type Workshops
-function create_posttype() {
-
-	register_post_type( 'workshops',
-    // CPT Options
-		array(
-			'labels' => array(
-				'name' => __( 'Delavnice' ),
-				'singular_name' => __( 'Delavnica' )
-			),
-			'supports' => array( 'title', 'page-attributes' ),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array('slug' => 'delavnica'),
-			'menu_position' => 5,
-			'menu_icon' => 'dashicons-format-chat',
-		)
+function create_custom_posttype_workshops() {
+	$labels = array(
+		'name'               => _x( 'Workshops', 'post type general name' ),
+		'singular_name'      => _x( 'Workshop', 'post type singular name' ),
+		'add_new'            => _x( 'Add New', 'workshop' ),
+		'add_new_item'       => __( 'Add New Workshops' ),
+		'edit_item'          => __( 'Edit Workshop' ),
+		'new_item'           => __( 'New Workshop' ),
+		'all_items'          => __( 'All Workshops' ),
+		'view_item'          => __( 'View Workshop' ),
+		'search_items'       => __( 'Search Workshops' ),
+		'not_found'          => __( 'No Workshop found' ),
+		'not_found_in_trash' => __( 'No Workshop found in the Trash' ),
+		'parent_item_colon'  => '',
+		'menu_name'          => 'Workshops'
 	);
-
-		register_post_type( 'partners',
-    // CPT Options
-		array(
-			'labels' => array(
-				'name' => __( 'Partnerji' ),
-				'singular_name' => __( 'Partner' )
-			),
-			'supports' => array( 'title', 'page-attributes' ),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array('slug' => 'partner'),
-			'menu_position' => 5,
-			'menu_icon' => 'dashicons-universal-access-alt',
-		)
+	$args = array(
+		'labels'        => $labels,
+		'description'   => 'Holds workshops and game specific data',
+		'public'        => true,
+		'menu_position' => 5,
+		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+		'show_in_rest' 	=> true,
+		'has_archive'   => true,
+		'menu_icon' => 'dashicons-format-chat',
 	);
-
+	register_post_type( 'workshops', $args );
 }
-// Hooking up our function to theme setup
-add_action( 'init', 'create_posttype' );
+add_action( 'init', 'create_custom_posttype_workshops' );
+
+// New post type Partners
+function create_custom_posttype_partners() {
+	$labels = array(
+		'name'               => _x( 'Partners', 'post type general name' ),
+		'singular_name'      => _x( 'Partner', 'post type singular name' ),
+		'add_new'            => _x( 'Add New', 'partner' ),
+		'add_new_item'       => __( 'Add New Partners' ),
+		'edit_item'          => __( 'Edit Partner' ),
+		'new_item'           => __( 'New Partner' ),
+		'all_items'          => __( 'All Partners' ),
+		'view_item'          => __( 'View Partner' ),
+		'search_items'       => __( 'Search Partners' ),
+		'not_found'          => __( 'No Partner found' ),
+		'not_found_in_trash' => __( 'No Partner found in the Trash' ),
+		'parent_item_colon'  => '',
+		'menu_name'          => 'Partners'
+	);
+	$args = array(
+		'labels'        => $labels,
+		'description'   => 'Holds partners and game specific data',
+		'public'        => true,
+		'menu_position' => 6,
+		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+		'show_in_rest' 	=> true,
+		'has_archive'   => true,
+		'menu_icon' => 'dashicons-universal-access-alt',
+	);
+	register_post_type( 'partners', $args );
+}
+add_action( 'init', 'create_custom_posttype_partners' );
