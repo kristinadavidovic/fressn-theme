@@ -10,7 +10,7 @@
 
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="footer-menu">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
 		<div class="footer-menu-social">
 			Spremljaj nas na: <a href="https://www.instagram.com/cistfreesn/" target="_blank">
 				<i class="fab fa-instagram fa-2x"></i>

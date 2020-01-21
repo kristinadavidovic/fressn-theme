@@ -51,6 +51,7 @@ function freesn_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'freesn' ),
+		'footer' => __( 'Footer Menu', 'freesn' ),
 	) );
 
 	/*
@@ -195,6 +196,3 @@ function create_posttype() {
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
-
-
-
