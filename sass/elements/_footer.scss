@@ -1,90 +1,49 @@
-.footer-gray-bg {
-	width: 100%;
-	padding: 80px 15px;
-	background-color: $color-mercury;
-	text-align: center;
-}
-
-.footer-link {
-	&:visited,
-	&:focus,
-	&:active {
-		color: $color-white;
+footer {
+	&:not(.entry-footer) {
+		display: block;
+		padding: 35px 0 25px;
+		background-color: $color-black;
 	}
 }
 
-.footer-novice {
-	font-size: 14px;
-}
-
-.footer-menu {
+.footer-menu__social {
 	display: flex;
 	align-items: center;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	background-color: $color-tundora;
+	margin: 0 auto;
+
+	@include md {
+		margin-left: 0;
+	}
+}
+
+.footer-menu__social-link {
+	display: inline-block;
+	padding: 5px;
 	color: $color-white;
-	font-size: 14px;
-	text-align: center;
+	font-size: 1.3em;
+	text-decoration: none;
 
-	ul {
-		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-		justify-content: center;
-		height: 100%;
-		padding: 0;
-		margin: 0;
+	& + & {
+		margin-left: 5px;
 	}
 
-	li {
-		display: inline;
-		padding: 0 5px;
-		color: $color-white;
+	i {
+		transition: $trannsition-regular color;
 	}
+}
 
-	a {
-		position: relative;
-		padding-bottom: 5px;
-		color: $color-white;
-		line-height: 24px;
-		text-decoration: none;
-		transition: $trannsition-regular color,
-					$trannsition-regular background-color;
-
-		&:hover {
-			&::before {
-				transform: scaleX(1);
-			}
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			transition: $trannsition-regular transform;
-		}
-
-		&::before {
-			bottom: 0;
-			left: 0;
-			height: 2px;
-			width: 100%;
-			background-color: $color-white;
-			transform: scaleX(0);
+.social-link-instagram {
+	&:hover {
+		i {
+			color: $color-instagram;
 		}
 	}
 }
 
-.footer-info {
-	font-size: 14px;
-	text-align: center;
-}
-
-.footer-menu .menu-freesn-container,
-.footer-menu-social {
-	padding: 20px;
-}
-
-.footer-menu .fab {
-	padding: 0 10px;
+.social-link-facebook {
+	&:hover {
+		i {
+			color: $color-facebook;
+		}
+	}
 }

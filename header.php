@@ -15,7 +15,6 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/favicon.ico">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=latin-ext" rel="stylesheet">
-<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
 <!-- Latest compiled and minified JavaScript -->
 <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -37,7 +36,7 @@
 						}
 						?>
 				</div>
-				<nav id="site-navigation" class="main-navigation" role="navigation">
+				<nav id="site-navigation" class="main-navigation menu" role="navigation">
 					<button class="menu-toggle"><i class="fas fa-bars"></i></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</nav>
