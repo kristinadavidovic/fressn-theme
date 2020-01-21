@@ -11,24 +11,24 @@ function css() {
     .pipe(
       dest('./'),
       { sourcemaps: true }
-    )
+    );
 }
 
 function js() {
   return src('./js/*.js', { sourcemaps: true })
     .pipe(
-      babel({
-        presets: ['@babel/env'],
-      })
-    )
+    babel({
+      presets: ['@babel/env'],
+    })
+  )
     .pipe(concat('build.min.js'))
-    .pipe(dest('./js/min', { sourcemaps: true }))
+    .pipe(dest('./js/min', { sourcemaps: true }));
 }
 
 function watchMe() {
-  watch('./sass/**/*.scss', css)
+  watch('./sass/**/*.scss', css);
 }
 
-exports.css = css
-exports.js = js
-exports.default = watchMe
+exports.css = css;
+exports.js = js;
+exports.default = watchMe;

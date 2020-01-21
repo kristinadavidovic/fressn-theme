@@ -1,0 +1,54 @@
+.slider-partnerji {
+	padding-top: 20px;
+
+	.slick-dots {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+		margin-top: 15px;
+
+		li {
+			margin: 0 5px;
+		}
+
+		button {
+			font-size: 0;
+			color: transparent;
+			border-radius: 50%;
+			display: block;
+			width: 10px;
+			height: 10px;
+			padding: 0;
+			opacity: 0.6;
+			transition: all ease 0.3s;
+		}
+	}
+}
+
+.slider-partnerji .slick-dots button:hover,
+.slider-partnerji .slick-dots li.slick-active button {
+	opacity: 1;
+}
+
+.slider-partnerji .slick-dots li:only-child {
+	display: none;
+}
+
+.border-partner {
+	padding: 5px;
+	border: 1px solid lightgrey;
+	margin-bottom: 15px;
+}
+
+.partnerji {
+    margin-bottom: 20px;
+
+    img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+}

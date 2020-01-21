@@ -1,0 +1,154 @@
+.calendar-workshops-month {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+
+.calendar-workshops-month-name {
+	position: relative;
+	font-family: 'Cookie', cursive;
+	font-size: 6rem;
+	display: inline;
+	padding: 0 40px;
+}
+
+.calendar-weekdays_names ul {
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+	padding: 10px 0;
+	border-bottom: 1px solid black;
+	margin: 20px 0;
+}
+
+.calendar-workshops {
+	justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.calendar-workshop {
+	padding: 15px 10px;
+	border: 2px solid rgba(49, 116, 181, 0.5);
+	/* border-radius: 5px; */
+	margin: 10px 5px 15px;
+	height: 310px;
+	transition: all ease 0.4s;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: calc((100% / 3) - 10px);
+	width: 100%;
+}
+
+@media only screen and (max-width: 678px) {
+	.calendar-workshop {
+		max-width: calc((100% / 2) - 10px);
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.calendar-workshop {
+		margin: 10px 0;
+		max-width: 93vw;
+	}
+}
+
+.calendar-workshop:hover {
+	box-shadow: 1px 4px 12px rgba(0, 0, 0, 0.41);
+}
+
+.calendar-workshop h3 {
+	font-weight: bold;
+	text-align: left;
+	font-size: 28px;
+	margin-top: 10px;
+}
+
+.calendar-workshop-date {
+	border-bottom: 2px solid var(--main-color);
+	font-weight: bold;
+}
+
+.calendar-workshop-more {
+	display: none;
+}
+
+a.btn-prijava {
+	position: relative;
+	display: inline-block;
+	padding: 5px 10px;
+	color: $color-black;
+	font-weight: $font-weight-bold;
+	text-transform: uppercase;
+	margin-left: 5px;
+	text-decoration: none;
+}
+
+a.btn-prijava:hover {
+	text-decoration: underline;
+}
+
+.prijava-packa::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: inline-block;
+	width: 130px;
+	height: 150px;
+	background-image: url('/wp-content/uploads/2019/02/ELEMENTI_Rumen_trikotnik.png');
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	transform: translate(-50%, -50%);
+	transition: all ease 0.3s;
+	z-index: -1;
+}
+
+.prijava-packa:hover::before {
+	transform: translate(-50%, -50%) rotate(20deg) scale(1.1);
+}
+
+.workshop-links {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+a.vec {
+	font-size: 1rem;
+	color: $color-boulder;
+	text-decoration: underline !important;
+	cursor: pointer;
+}
+
+a.vec:hover {
+	color: $color-black;
+}
+
+.workshop-dude {
+	color: $color-boulder;
+	font-size: 14px;
+	padding: 5px 0;
+	text-align: left;
+}
+
+.info-title {
+	display: inline-block;
+	margin: 10px;
+	padding: 5px 10px;
+	border-bottom: 2px solid $color-black;
+}
+
+.info {
+	margin: 20px;
+}
+
+.workshop-desc {
+	margin: 20px;
+	font-size: 110%;
+}
+
+.workshop-dude-more {
+	text-align: left;
+}

@@ -1,0 +1,90 @@
+.footer-gray-bg {
+	width: 100%;
+	padding: 80px 15px;
+	background-color: $color-mercury;
+	text-align: center;
+}
+
+.footer-link {
+	&:visited,
+	&:focus,
+	&:active {
+		color: $color-white;
+	}
+}
+
+.footer-novice {
+	font-size: 14px;
+}
+
+.footer-menu {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background-color: $color-tundora;
+	color: $color-white;
+	font-size: 14px;
+	text-align: center;
+
+	ul {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: center;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+		display: inline;
+		padding: 0 5px;
+		color: $color-white;
+	}
+
+	a {
+		position: relative;
+		padding-bottom: 5px;
+		color: $color-white;
+		line-height: 24px;
+		text-decoration: none;
+		transition: $trannsition-regular color,
+					$trannsition-regular background-color;
+
+		&:hover {
+			&::before {
+				transform: scaleX(1);
+			}
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			transition: $trannsition-regular transform;
+		}
+
+		&::before {
+			bottom: 0;
+			left: 0;
+			height: 2px;
+			width: 100%;
+			background-color: $color-white;
+			transform: scaleX(0);
+		}
+	}
+}
+
+.footer-info {
+	font-size: 14px;
+	text-align: center;
+}
+
+.footer-menu .menu-freesn-container,
+.footer-menu-social {
+	padding: 20px;
+}
+
+.footer-menu .fab {
+	padding: 0 10px;
+}

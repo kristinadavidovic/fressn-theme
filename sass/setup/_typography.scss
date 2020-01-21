@@ -1,0 +1,14 @@
+h2 {
+	color: $color-black;
+	font-weight: $font-weight-bold;
+	margin-bottom: 24px;
+	font-size: 26px;
+
+	&.gray {
+		text-align: left;
+		color: $color-boulder;
+		margin-bottom: 20px;
+		font-size: 26px;
+		font-weight: 300;
+	}
+}

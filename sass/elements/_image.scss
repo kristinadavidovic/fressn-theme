@@ -1,0 +1,38 @@
+.bg-image {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	margin-bottom: 30px;
+
+	img {
+		width: 100%;
+	}
+}
+
+.main-caption {
+	position: relative;
+	display: block;
+	font-size: 16px;
+	background-color: $color-black;
+	height: 70px;
+	width: 250px;
+	color: $color-white;
+	padding: 12px 15px 12px 40px;
+	bottom: 90px;
+	text-align: left;
+}
+
+.logo-img {
+	width: 160px;
+	display: block;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	transition: $trannsition-regular all ease;
+}

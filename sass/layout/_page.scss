@@ -1,0 +1,43 @@
+.page-id-14 .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-id-14 .row .projekt-clan {
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: calc(100% / 3);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+@media only screen and (max-width: 768px) {
+    .page-id-14 .row .projekt-clan {
+        max-width: calc(100% / 2);
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .page-id-14 .row .projekt-clan {
+        max-width: calc(100% / 1);
+    }
+}
+
+.page-id-14 .row .projekt-clan div {
+    width: 100%;
+    text-align: center;
+}
+
+.page-id-14 .row .projekt-clan p {
+    display: none;
+}
+
+.page-id-14 .row>h3 {
+    width: 100%;
+    margin-bottom: 38px;
+    margin-top: 48px;
+}

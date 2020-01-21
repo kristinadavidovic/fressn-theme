@@ -1,0 +1,61 @@
+.section-title {
+	margin: 0 auto;
+	display: inline-block;
+	border-radius: 3px;
+	position: relative;
+
+	h2 {
+		color: black;
+		border-bottom: 2px solid black;
+		border-radius: 3px;
+		font-weight: bold;
+		margin: 0;
+		padding: 10px 15px;
+		font-size: 20px;
+		display: inline-block;
+	}
+}
+
+.more-info {
+	margin: 70px auto 40px;
+}
+
+.packa {
+	position: relative;
+	transition: all 0.3s ease;
+	display: inline-block;
+	color: $color-black !important;
+	font-weight: 700;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+}
+
+.packa:hover::before {
+    transform: rotate(-40deg) scale(1.1);
+}
+
+.packa::before {
+    content: '';
+    transition: all 0.3s ease;
+    position: absolute;
+    top: -105px;
+    left: -70px;
+    display: inline-block;
+    width: 260px;
+    height: 200px;
+    background-image: url('/wp-content/uploads/2019/02/ELEMENTI_Rdeča_packa-1.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -1;
+    transform: rotate(-50deg);
+}
+
+.flex {
+    //! todo: spucej to!
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}

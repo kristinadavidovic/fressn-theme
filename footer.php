@@ -20,16 +20,6 @@
 			 </a>
 		</div>
 	</div>
-<!-- 	<div class="footer-info">
-		<div class="col-md-3">
-			Copyright © ŠSPRSS 2017
-		</div>
-		<div class="col-md-3" style="float: right;">
-
-			<span style="font-size:14px;">Design: <a href="https://www.linkedin.com/in/denis-romozi-376181121/" target="_blank"> Denis Romozi</a></span>
-			<span style="font-size:14px;">Izdelava: <a href="https://www.linkedin.com/in/kristina-davidovi%C4%8D-74828196" target="_blank"> Kristina Davidovic</a></span>
-		</div>
-	</div> -->
 </footer><!-- #colophon -->
 
 <?php wp_footer(); ?>
