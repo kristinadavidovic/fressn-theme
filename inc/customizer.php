@@ -53,3 +53,18 @@ function freesn_customize_preview_js() {
 	wp_enqueue_script( 'freesn-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'freesn_customize_preview_js' );
+
+/**
+ * Add custom logo support.
+ */
+function themename_custom_logo_setup() {
+	$defaults = array(
+		'height'      => 100,
+		'width'       => 400,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	);
+	add_theme_support( 'custom-logo', $defaults );
+   }
+add_action( 'after_setup_theme', 'themename_custom_logo_setup' );

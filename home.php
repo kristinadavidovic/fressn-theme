@@ -14,34 +14,19 @@
 get_header(); ?>
 
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<p>
-				Ker nam kreativa teče po žilah. Kreativa utripa v srcu. Kreativa je
-				živa. Je povsod in nikjer. Je čudovita zmešnjava, romantičen upornik
-				ali otroški raziskovalec. Skriva se v nas in se izraža skozi naše
-				čute. Je ljubezen in je jeza. Je vsa čustva, ki nas navdihnejo in
-				ustvarjajo umetnine znotraj nas. Izklopi um in vklopi svoje čute. Poišči tisto, kar prižiga tvoje srce.
-				Prereži popkovino, ki te veže na udobje in zaživi s čist “frišnim”
-				pogledom na življenje. Viva Kreativa!
-				<p>
-					<p style="max-width: 150px; text-align: center; margin: 0 auto 10px;">
-						<img src="<?php bloginfo('template_directory');?>/img/logo.png"><br><br><br>
-						<h2>
-							<a href="http://www.freesn.si/the-end-viva-kreativa/"
-								class="prijava-packa btn-prijava">
-								IVA KREATIVA - zaključni dogodek
-							</a>
-						</h2>
-						<br><br>
-					</p>
-				<strong>Za podrobnosti o samem natečaju ter pravilih in pogojih sodelovanja kliknite »več informacij«.</strong>
-			</p>
-			<div class="section-title">
-				<h2>FREEŠN NATEČAJ</h2>
-			</div>
-		</div>
-	</div>
+	<p>
+		Ker nam kreativa teče po žilah. Kreativa utripa v srcu. Kreativa je
+		živa. Je povsod in nikjer. Je čudovita zmešnjava, romantičen upornik
+		ali otroški raziskovalec. Skriva se v nas in se izraža skozi naše
+		čute. Je ljubezen in je jeza. Je vsa čustva, ki nas navdihnejo in
+		ustvarjajo umetnine znotraj nas. Izklopi um in vklopi svoje čute. Poišči tisto, kar prižiga tvoje srce.
+		Prereži popkovino, ki te veže na udobje in zaživi s čist “frišnim”
+		pogledom na življenje. Viva Kreativa!
+	</p>
+	<p>
+		<strong>Za podrobnosti o samem natečaju ter pravilih in pogojih sodelovanja kliknite »več informacij«.</strong>
+	</p>
+	<h2>FREEŠN NATEČAJ</h2>
 </div>
 
 <div class="container">

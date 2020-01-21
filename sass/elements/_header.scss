@@ -1,12 +1,10 @@
-.navbar-header {
-    float: right;
+.header {
+	> .container {
+		display: flex;
+		align-items: center;
+	}
 }
 
-.navbar-logo {
-    padding: 0px 10px;
-    float: left;
-}
-
-.site-main {
-    text-align: center;
+.custom-logo-link {
+	display: inline-block;
 }

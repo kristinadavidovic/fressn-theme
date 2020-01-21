@@ -6,12 +6,25 @@ $color-tundora: #404040;
 $color-mercury: #E6E6E6;
 $color-white: #FFFFFF;
 
+$color__background-screen: #f1f1f1;
+$color__text-screen: #21759b;
+
 // Typography
 $font-default: 'Open Sans', sans-serif;
 
 $font-weight-light: 300;
 $font-weight-regular: 400;
+$font-weight-semibold: 600;
 $font-weight-bold: 700;
 
 // Transitions
 $trannsition-regular: 0.3s;
+
+// Widths
+$xs-width:                  0px;
+$sm-width:                  421px;
+$md-width:                  701px;
+$lg-width:                  1001px;
+$xlg-width:                 1301px;
+
+$container-width:           $lg-width;

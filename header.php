@@ -14,7 +14,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/favicon.ico">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=latin-ext" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
 <!-- Latest compiled and minified JavaScript -->
@@ -27,25 +27,22 @@
 
 <body <?php body_class(); ?>>
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'freesn' ); ?></a>
-	<div class="container">
-		<div class="navbar-logo">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img src="<?php bloginfo('template_directory');?>/img/logo.png">
-			</a>
-		</div>
-		<div class="navbar-header">
-			<header role="banner">
+	<div class="navbar-header">
+		<header role="banner" class="header">
+			<div class="container">
+				<div class="navbar-logo">
+					<?php
+						if ( function_exists( 'the_custom_logo' ) ) {
+							the_custom_logo();
+						}
+						?>
+				</div>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-
 					<button class="menu-toggle"><i class="fas fa-bars"></i></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</nav>
-			</header>
-		</div><!--/.navbar-header -->
-	</div>
+			</div>
+		</header>
+	</div><!--/.navbar-header -->
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
-				<div class="bg-image">
-					<img src="/wp-content/uploads/2019/02/Cover_spletna_stran.jpg">
-				</div>

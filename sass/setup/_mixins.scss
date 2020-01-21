@@ -1,0 +1,42 @@
+// media queries
+@mixin max($maxwidth) {
+	@media only screen and (max-width: $maxwidth) {
+		@content;
+	}
+}
+
+@mixin min($minwidth) {
+	@media only screen and (min-width: $minwidth) {
+		@content;
+	}
+}
+
+@mixin xs {
+    @media only screen and (min-width: #{$xs-width}) {
+        @content;
+    }
+}
+
+@mixin sm {
+	@media only screen and (min-width: #{$sm-width}) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media only screen and (min-width: #{$md-width}) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media only screen and (min-width: #{$lg-width}) {
+		@content;
+	}
+}
+
+@mixin xlg {
+	@media only screen and (min-width: #{$xlg-width}) {
+		@content;
+	}
+}

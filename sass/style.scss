@@ -45,12 +45,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'normalize';
 
 @import 'setup/variables';
+@import 'setup/mixins';
 @import 'setup/columns';
 @import 'setup/general';
 @import 'setup/structure';
 @import 'setup/typography';
-
-@import 'mixins/mixins';
 
 @import 'elements/gallery';
 @import 'elements/header';
