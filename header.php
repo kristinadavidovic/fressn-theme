@@ -25,21 +25,26 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'freesn' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content">
+		<?php _e( 'Skip to content', 'freesn' ); ?>
+	</a>
 	<div class="navbar-header">
 		<header role="banner" class="header">
 			<div class="container">
 				<div class="navbar-logo">
 					<?php
-						if ( function_exists( 'the_custom_logo' ) ) {
-							the_custom_logo();
-						}
-						?>
+						if (function_exists('the_custom_logo')) the_custom_logo();
+					?>
 				</div>
-				<nav id="site-navigation" class="main-navigation menu" role="navigation">
-					<button class="menu-toggle"><i class="fas fa-bars"></i></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-				</nav>
+				<nav id="site-navigation" class="main-navigation menu" role="navigation" >
+						<input type="checkbox" id="menu-toggle-trigger" class="menu-toggle__input" />
+						<label class="menu-toggle" for="menu-toggle-trigger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</label>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+					</nav>
 			</div>
 		</header>
 	</div><!--/.navbar-header -->
