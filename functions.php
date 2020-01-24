@@ -177,13 +177,15 @@ function create_custom_posttype_workshops() {
 	);
 	$args = array(
 		'labels'        => $labels,
-		'description'   => 'Holds workshops and game specific data',
+		'description'   => 'Holds workshops specific data',
 		'public'        => true,
 		'menu_position' => 5,
 		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
 		'show_in_rest' 	=> true,
 		'has_archive'   => true,
 		'menu_icon' => 'dashicons-format-chat',
+		'can_export'            => true,
+        'exclude_from_search'   => false,
 	);
 	register_post_type( 'workshops', $args );
 }
@@ -211,11 +213,27 @@ function create_custom_posttype_partners() {
 		'description'   => 'Holds partners and game specific data',
 		'public'        => true,
 		'menu_position' => 6,
-		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+		'supports'      => array( 'title', 'thumbnail' ),
 		'show_in_rest' 	=> true,
 		'has_archive'   => true,
 		'menu_icon' => 'dashicons-universal-access-alt',
+		'can_export'            => true,
+        'exclude_from_search'   => false,
 	);
 	register_post_type( 'partners', $args );
 }
 add_action( 'init', 'create_custom_posttype_partners' );
+
+// Register Widgets
+// function custom_sidebar() {
+// 	$args = array(
+// 		'id' => 'archive-description',
+// 		'name' => __( 'Partners description', 'freesn' ),
+// 		'before_title' => '<h3 class="widget-title hidden">',
+// 		'after_title' => '</h3>',
+// 		'before_widget' => '<div id="%1$s" class="widget %2$s widget_archive-description">',
+// 		'after_widget' => '</div>',
+// 		);
+// 		register_sidebar( $args );
+// }
+// add_action( 'widgets_init', 'custom_sidebar' );

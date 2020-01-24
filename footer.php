@@ -30,6 +30,8 @@
 	</div>
 </footer><!-- #colophon -->
 
+<?php global $template; echo basename($template); ?>
+
 <?php wp_footer(); ?>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://kit.fontawesome.com/d35379714b.js" crossorigin="anonymous"></script>

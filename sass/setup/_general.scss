@@ -130,3 +130,7 @@ a:not([class]) {
 #content[tabindex='-1']:focus {
 	outline: 0;
 }
+
+.hidden {
+	display: none;
+}
