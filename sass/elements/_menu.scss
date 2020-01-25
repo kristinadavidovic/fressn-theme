@@ -35,7 +35,7 @@ $menu-link-hover-width: 2px;
 	width: 100%;
 	height: 100%;
 	transform: translateX(-100%);
-	transition: all $trannsition-regular;
+	transition: all $transition-regular;
 	z-index: 1;
 
 	@include md {
@@ -88,7 +88,7 @@ $menu-link-hover-width: 2px;
 		justify-content: center;
 		width: 100%;
 		overflow: hidden;
-		transition: $trannsition-regular ease-out $trannsition-regular;
+		transition: $transition-regular ease-out $transition-regular;
 
 		@include md {
 			margin: 0 0.5em;
@@ -116,7 +116,7 @@ $menu-link-hover-width: 2px;
 			width: $menu-link-hover-width;
 			background-color: $color-black;
 			transform: translateY(100%);
-			transition: $trannsition-regular;
+			transition: $transition-regular;
 
 			@include md {
 				content: '';
@@ -157,7 +157,7 @@ $menu-link-hover-width: 2px;
 				width: 100%;
 				background-color: $color-black;
 				transform: translateX(-100%);
-				transition: $trannsition-regular;
+				transition: $transition-regular;
 
 				@include md {
 					content: '';
@@ -220,7 +220,7 @@ $menu-link-hover-width: 2px;
 			transform: translateX(0);
 
 			&::before {
-				animation: nav-bg-open $trannsition-regular $ease-default forwards;
+				animation: nav-bg-open $transition-regular $ease-default forwards;
 			}
 
 			a {
@@ -248,7 +248,7 @@ $menu-link-hover-width: 2px;
 	position: relative;
 	margin: auto;
 	transform: rotate(0deg);
-	transition: $trannsition-slow background-color ease;
+	transition: $transition-slow background-color ease;
 	cursor: pointer;
 
 	@include md {
@@ -354,7 +354,7 @@ $menu-link-hover-width: 2px;
 				background-color: $color-white;
 				transform: scaleX(0);
 				transform-origin: bottom right;
-				transition: $trannsition-regular transform;
+				transition: $transition-regular transform;
 			}
 		}
 	}
