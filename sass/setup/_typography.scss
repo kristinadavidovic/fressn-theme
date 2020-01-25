@@ -12,3 +12,9 @@ h2 {
 		font-weight: 300;
 	}
 }
+
+h1.entry-title {
+	// don't display page title
+	// add it in the content as a block
+	display: none;
+}

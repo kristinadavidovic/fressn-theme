@@ -44,7 +44,12 @@ li > ol {
 }
 
 p {
-	margin: 0px 0 15px;
+	margin: 0 0 1.5em;
+	line-height: 1.6;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 dfn,

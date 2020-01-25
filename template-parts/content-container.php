@@ -3,8 +3,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area container">
-		<main id="main" class="site-main">
+	<div class="container">
 
 		<?php
 		while ( have_posts() ) :
@@ -20,8 +19,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div><!-- .container -->
 
 <?php
 // get_sidebar();

@@ -32,6 +32,7 @@ figure {
 }
 
 img {
+	display: inline-block;
 	height: auto;
 	max-width: 100%;
 	transition: $transition-regular all ease;

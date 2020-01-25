@@ -139,6 +139,11 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Custom shortcodes.
+ */
+require get_template_directory() . '/inc/custom-shortcodes.php';
+
 function the_excerpt_max_charlength($charlength, $permalink) {
 	$excerpt = get_the_excerpt();
 	$charlength++;
@@ -223,17 +228,3 @@ function create_custom_posttype_partners() {
 	register_post_type( 'partners', $args );
 }
 add_action( 'init', 'create_custom_posttype_partners' );
-
-// Register Widgets
-// function custom_sidebar() {
-// 	$args = array(
-// 		'id' => 'archive-description',
-// 		'name' => __( 'Partners description', 'freesn' ),
-// 		'before_title' => '<h3 class="widget-title hidden">',
-// 		'after_title' => '</h3>',
-// 		'before_widget' => '<div id="%1$s" class="widget %2$s widget_archive-description">',
-// 		'after_widget' => '</div>',
-// 		);
-// 		register_sidebar( $args );
-// }
-// add_action( 'widgets_init', 'custom_sidebar' );

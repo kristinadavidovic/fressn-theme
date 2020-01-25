@@ -1,10 +1,4 @@
 .header {
-	padding: 10px 0;
-
-	@include md {
-		padding: 20px 0;
-	}
-
 	> .container {
 		display: flex;
 		align-items: center;
