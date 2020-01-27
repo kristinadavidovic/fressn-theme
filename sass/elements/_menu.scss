@@ -76,8 +76,9 @@ $menu-link-hover-width: 2px;
 			align-items: center;
 			flex-direction: row;
 			width: auto;
-			padding: 0;
+			padding: $menu-link-hover-width;
 			margin-top: 0;
+			overflow: hidden;
 		}
 	}
 
@@ -87,7 +88,6 @@ $menu-link-hover-width: 2px;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
-		overflow: hidden;
 		transition: $transition-regular ease-out $transition-regular;
 
 		@include md {
@@ -115,7 +115,7 @@ $menu-link-hover-width: 2px;
 			height: 100%;
 			width: $menu-link-hover-width;
 			background-color: $color-black;
-			transform: translateY(100%);
+			transform: translateY(110%);
 			transition: $transition-regular;
 
 			@include md {
@@ -156,7 +156,7 @@ $menu-link-hover-width: 2px;
 				height: $menu-link-hover-width;
 				width: 100%;
 				background-color: $color-black;
-				transform: translateX(-100%);
+				transform: translateX(-110%);
 				transition: $transition-regular;
 
 				@include md {
