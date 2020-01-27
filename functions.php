@@ -184,13 +184,13 @@ function create_custom_posttype_workshops() {
 		'labels'        => $labels,
 		'description'   => 'Holds workshops specific data',
 		'public'        => true,
-		'menu_position' => 5,
 		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
 		'show_in_rest' 	=> true,
 		'has_archive'   => true,
-		'menu_icon' => 'dashicons-format-chat',
+		'menu_icon' => 'dashicons-lightbulb',
 		'can_export'            => true,
-        'exclude_from_search'   => false,
+		'exclude_from_search'   => false,
+		'rewrite' => array( 'slug' => 'delavnica' ),
 	);
 	register_post_type( 'workshops', $args );
 }
@@ -215,16 +215,108 @@ function create_custom_posttype_partners() {
 	);
 	$args = array(
 		'labels'        => $labels,
-		'description'   => 'Holds partners and game specific data',
+		'description'   => 'Holds partners specific data',
 		'public'        => true,
-		'menu_position' => 6,
 		'supports'      => array( 'title', 'thumbnail' ),
 		'show_in_rest' 	=> true,
 		'has_archive'   => true,
-		'menu_icon' => 'dashicons-universal-access-alt',
+		'menu_icon' => 'dashicons-buddicons-groups',
 		'can_export'            => true,
-        'exclude_from_search'   => false,
+		'exclude_from_search'   => false,
+		'rewrite' => array( 'slug' => 'partner' ),
 	);
 	register_post_type( 'partners', $args );
 }
 add_action( 'init', 'create_custom_posttype_partners' );
+
+// New post type Team members
+function create_custom_posttype_team_members() {
+	$labels = array(
+		'name'               => _x( 'Team members', 'post type general name' ),
+		'singular_name'      => _x( 'Team member', 'post type singular name' ),
+		'add_new'            => _x( 'Add New', 'Team member' ),
+		'add_new_item'       => __( 'Add New Team member' ),
+		'edit_item'          => __( 'Edit Team member' ),
+		'new_item'           => __( 'New Team member' ),
+		'all_items'          => __( 'All Team members' ),
+		'view_item'          => __( 'View Team member' ),
+		'search_items'       => __( 'Search Team members' ),
+		'not_found'          => __( 'No Team member found' ),
+		'not_found_in_trash' => __( 'No Team member found in the Trash' ),
+		'parent_item_colon'  => '',
+		'menu_name'          => 'Team members'
+	);
+	$args = array(
+		'labels'        => $labels,
+		'description'   => 'Holds Team members specific data',
+		'public'        => true,
+		'supports'      => array( 'title', 'thumbnail', 'editor',
+			'taxonomies' => array( 'sections' ),
+		),
+		'show_in_rest' 	=> true,
+		'has_archive'   => true,
+		'menu_icon' => 'dashicons-nametag',
+		'can_export'            => true,
+		'exclude_from_search'   => false,
+		'rewrite' => array( 'slug' => 'ekipa' ),
+		'taxonomies'	=> array( 'sections' )
+	);
+	register_post_type( 'team-members', $args );
+}
+add_action( 'init', 'create_custom_posttype_team_members' );
+
+function wpse_custom_menu_order( $menu_ord ) {
+    if ( !$menu_ord ) return true;
+
+    return array(
+        'index.php', // Dashboard
+		'separator1', // First separator
+		'edit.php?post_type=workshops', // Workshops
+        'edit.php?post_type=page', // Pages
+		'edit.php?post_type=partners', // Partners
+		'edit.php?post_type=team-members', // Team members
+        'upload.php', // Media
+        'link-manager.php', // Links
+        'edit.php', // Posts
+        'edit-comments.php', // Comments
+        'separator2', // Second separator
+        'themes.php', // Appearance
+        'plugins.php', // Plugins
+        'users.php', // Users
+        'tools.php', // Tools
+        'options-general.php', // Settings
+        'separator-last', // Last separator
+    );
+}
+add_filter( 'custom_menu_order', 'wpse_custom_menu_order', 10, 1 );
+add_filter( 'menu_order', 'wpse_custom_menu_order', 10, 1 );
+
+// add custom taxonomy for team members
+add_action( 'init', 'create_sections_hierarchical_taxonomy', 0 );
+
+// create a custom taxonomy
+function create_sections_hierarchical_taxonomy() {
+	$labels = array(
+		'name' => _x( 'Sections', 'taxonomy general name' ),
+		'singular_name' => _x( 'Section', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search Sections' ),
+		'all_items' => __( 'All Sections' ),
+		'parent_item' => __( 'Parent Section' ),
+		'parent_item_colon' => __( 'Parent Section:' ),
+		'edit_item' => __( 'Edit Section' ),
+		'update_item' => __( 'Update Section' ),
+		'add_new_item' => __( 'Add New Section' ),
+		'new_item_name' => __( 'New Section Name' ),
+		'menu_name' => __( 'Sections' ),
+	);
+
+	register_taxonomy( 'sections', array('post'), array(
+			'hierarchical' => true,
+			'labels' => $labels,
+			'show_ui' => true,
+			'show_admin_column' => true,
+			'show_in_rest' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'sekcija' ),
+	));
+};
