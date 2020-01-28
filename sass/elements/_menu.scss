@@ -88,90 +88,38 @@ $menu-link-hover-width: 2px;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
+		overflow: hidden;
 		transition: $transition-regular ease-out $transition-regular;
 
 		@include md {
-			margin: 0 0.5em;
 			text-align: center;
-		}
-
-		&:last-child {
-			margin-right: 0;
-		}
-
-		&:hover {
-			&::before,
-			&::after,
-			a::before,
-			a::after {
-				background-color: $color-black;
-				transform: translateX(0);
-			}
-		}
-
-		&::before,
-		&::after {
-			position: absolute;
-			height: 100%;
-			width: $menu-link-hover-width;
-			background-color: $color-black;
-			transform: translateY(110%);
-			transition: $transition-regular;
-
-			@include md {
-				content: '';
-			}
-		}
-
-		&::before {
-			left: 0;
-			top: 0;
-		}
-
-		&::after {
-			right: 0;
-			bottom: 0;
+			overflow: visible;
 		}
 
 		a {
 			display: block;
 			width: 100%;
-			padding: 15px;
+			padding: 0.5rem 1rem;
 			color: $color-white;
 			font-size: 7vw;
-			font-weight: $font-weight-semibold;
 			transform: translateY(100%);
-			text-transform: uppercase;
-			overflow: hidden;
 
 			@include md {
+				padding-left: 0.4rem;
+				padding-right: 0.4rem;
 				color: $color-black;
-				font-size: 1.1rem;
+				font-size: 19px;
 				transform: translateY(0);
 			}
 
-			&::before,
-			&::after {
-				position: absolute;
-				height: $menu-link-hover-width;
-				width: 100%;
-				background-color: $color-black;
-				transform: translateX(-110%);
-				transition: $transition-regular;
-
-				@include md {
-					content: '';
-				}
+			@include lg {
+				padding-left: 0.6rem;
+				padding-right: 0.6rem;
+				font-size: 22px;
 			}
 
-			&::before {
-				top: 0;
-				left: 0;
-			}
-
-			&::after {
-				right: 0;
-				bottom: 0;
+			&:hover {
+				text-decoration: underline;
 			}
 		}
 	}

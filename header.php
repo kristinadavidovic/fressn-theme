@@ -30,22 +30,20 @@
 	</a>
 	<div class="navbar-header">
 		<header role="banner" class="header">
-			<div class="container">
-				<div class="navbar-logo">
-					<?php
-						if (function_exists('the_custom_logo')) the_custom_logo();
-					?>
-				</div>
-				<nav id="site-navigation" class="main-navigation menu" role="navigation" >
-						<input type="checkbox" id="menu-toggle-trigger" class="menu-toggle__input" />
-						<label class="menu-toggle" for="menu-toggle-trigger">
-							<span></span>
-							<span></span>
-							<span></span>
-						</label>
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-					</nav>
+			<div class="navbar-logo">
+				<?php
+					if (function_exists('the_custom_logo')) the_custom_logo();
+				?>
 			</div>
+			<nav id="site-navigation" class="main-navigation menu" role="navigation" >
+				<input type="checkbox" id="menu-toggle-trigger" class="menu-toggle__input" />
+				<label class="menu-toggle" for="menu-toggle-trigger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			</nav>
 		</header>
 	</div><!--/.navbar-header -->
 	<div id="primary" class="content-area">
