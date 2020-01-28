@@ -25,6 +25,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div class="maintenence-mode">
+	<div class="text">
+		Spletna stran je v pripravi.
+	</div>
+</div>
 	<a class="skip-link screen-reader-text" href="#content">
 		<?php _e( 'Skip to content', 'freesn' ); ?>
 	</a>

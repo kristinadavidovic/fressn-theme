@@ -16,7 +16,33 @@ body {
 	font-size: 16px;
 	font-weight: $font-weight-light;
 	line-height: 1.6;
-	overflow-x: hidden;
+	overflow: hidden;
+
+	&.admin-bar {
+		overflow-y: visible;
+	}
+}
+
+.maintenence-mode {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: $color-white;
+	z-index: 9999;
+
+	.text {
+		font-weight: $font-weight-semibold;
+		font-size: 32px;
+	}
+
+	.admin-bar & {
+		display: none;
+	}
 }
 
 #primary {
