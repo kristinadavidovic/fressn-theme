@@ -14,7 +14,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/favicon.ico">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=latin-ext" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700|PT+Sans:400,700&display=swap&subset=latin-ext" rel="stylesheet">
 
 <!-- Latest compiled and minified JavaScript -->
 <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
