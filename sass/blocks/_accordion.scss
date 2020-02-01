@@ -1,11 +1,11 @@
 .wp-block-advgb-accordions {
 	.wp-block-advgb-accordion-item {
 		.advgb-accordion-header {
-            padding: 15px 0;
-            border-width: 0 0 1px;
+            padding: 15px 0 !important;
+            border-width: 0 0 1px !important;
 
             @include md {
-                padding: 25px 0;
+                padding: 25px 0 !important;
             }
 
 			&:focus {
@@ -21,7 +21,7 @@
 
 			&[aria-expanded='false'] {
 				.advgb-accordion-header-icon {
-					transform: rotate(0deg);
+					transform: rotate(0deg) !important;
 				}
 			}
 		}
@@ -32,9 +32,9 @@
 		}
 
         .advgb-accordion-body {
-			border-color: transparent;
-			padding-right: 0;
-			padding-left: 0;
+			border-color: transparent !important;
+			padding-right: 0 !important;
+			padding-left: 0 !important;
 		}
 	}
 }
