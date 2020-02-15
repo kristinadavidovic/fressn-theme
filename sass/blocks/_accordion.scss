@@ -1,4 +1,8 @@
 .wp-block-advgb-accordions {
+	width: calc(100% - 70px);
+	margin-right: auto;
+	margin-left: auto;
+
 	.wp-block-advgb-accordion-item {
 		.advgb-accordion-header {
             padding: 15px 0 !important;

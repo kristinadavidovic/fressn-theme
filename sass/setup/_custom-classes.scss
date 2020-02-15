@@ -13,3 +13,57 @@
 .hidden {
 	display: none;
 }
+
+.width100-70 {
+	width: calc(100% - 70px);
+}
+
+.width100-70--center {
+	width: calc(100% - 70px);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.text-align--center {
+	text-align: center;
+}
+
+.text-align--left {
+	text-align: left;
+}
+
+.text-align--right {
+	text-align: right;
+}
+
+.text--yellow {
+	color: $color-yellow !important;
+}
+
+.background--yellow {
+	background-color: $color-yellow !important;
+}
+
+.text--red {
+	color: $color-red !important;
+}
+
+.background--red {
+	background-color: $color-red !important;
+}
+
+.text--blue {
+	color: $color-blue !important;
+}
+
+.background--blue {
+	background-color: $color-blue !important;
+}
+
+.text--white {
+	color: $color-white !important;
+}
+
+.background--white {
+	background-color: $color-white !important;
+}
