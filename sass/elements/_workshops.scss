@@ -1,154 +1,221 @@
-.calendar-workshops-month {
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: center;
+.workshops {
+	padding-bottom: 50px;
 }
 
-.calendar-workshops-month-name {
-	position: relative;
-	font-family: 'Cookie', cursive;
-	font-size: 6rem;
-	display: inline;
-	padding: 0 40px;
-}
-
-.calendar-weekdays_names ul {
-	display: flex;
-	justify-content: space-around;
-	list-style: none;
-	padding: 10px 0;
-	border-bottom: 1px solid black;
-	margin: 20px 0;
-}
-
-.calendar-workshops {
-	justify-content: center;
+.workshops-grid {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.calendar-workshop {
-	padding: 15px 10px;
-	border: 2px solid rgba(49, 116, 181, 0.5);
-	/* border-radius: 5px; */
-	margin: 10px 5px 15px;
-	height: 310px;
-	transition: all ease 0.4s;
+.workshops__item {
+	position: relative;
+	width: 100%;
+	max-width: calc(100% / 1);
+	padding: 1.2vw;
+	margin-bottom: 30px;
+
+	@include md {
+		max-width: calc(100% / 2);
+	}
+
+	@include lg {
+		max-width: calc(100% / 3);
+	}
+
+	&:nth-child(5n + 1) {
+		.workshops__content-wrapper {
+			background-color: $color-yellow;
+		}
+	}
+
+	&:nth-child(3n + 2) {
+		.workshops__content-wrapper {
+			background-color: $color-red;
+		}
+	}
+
+	&:nth-child(5n + 3) {
+		.workshops__content-wrapper {
+			background-color: $color-blue;
+		}
+	}
+}
+
+.workshops__content-wrapper {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	max-width: calc((100% / 3) - 10px);
-	width: 100%;
-}
+	flex-wrap: wrap;
+	height: 100%;
+	min-height: 250px;
+	padding: 10px;
+	background-color: $color-yellow;
 
-@media only screen and (max-width: 678px) {
-	.calendar-workshop {
-		max-width: calc((100% / 2) - 10px);
+	@include md {
+		padding: 15px;
 	}
 }
 
-@media only screen and (max-width: 480px) {
-	.calendar-workshop {
-		margin: 10px 0;
-		max-width: 93vw;
-	}
-}
-
-.calendar-workshop:hover {
-	box-shadow: 1px 4px 12px rgba(0, 0, 0, 0.41);
-}
-
-.calendar-workshop h3 {
-	font-weight: bold;
-	text-align: left;
-	font-size: 28px;
-	margin-top: 10px;
-}
-
-.calendar-workshop-date {
-	border-bottom: 2px solid var(--main-color);
-	font-weight: bold;
-}
-
-.calendar-workshop-more {
-	display: none;
-}
-
-a.btn-prijava {
-	position: relative;
-	display: inline-block;
-	padding: 5px 10px;
-	color: $color-black;
-	font-weight: $font-weight-bold;
-	text-transform: uppercase;
-	margin-left: 5px;
-	text-decoration: none;
-}
-
-a.btn-prijava:hover {
-	text-decoration: underline;
-}
-
-.prijava-packa::before {
-	content: '';
+.workshops__datetime {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	display: inline-block;
-	width: 130px;
-	height: 150px;
-	background-image: url('/wp-content/uploads/2019/02/ELEMENTI_Rumen_trikotnik.png');
-	background-repeat: no-repeat;
-	background-size: 100% auto;
-	transform: translate(-50%, -50%);
-	transition: all ease 0.3s;
-	z-index: -1;
-}
-
-.prijava-packa:hover::before {
-	transform: translate(-50%, -50%) rotate(20deg) scale(1.1);
-}
-
-.workshop-links {
+	top: 0;
+	left: 0;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 70px;
+	padding: 5px;
+	background-color: $color-black;
+	color: $color-white;
+	font-size: 18px;
+	transform: translate(-10%, -10%);
+
+	span {
+		display: flex;
+		width: 100%;
+		font-weight: $font-weight-bold;
+	}
+
+	.workshop__modal & {
+		position: static;
+		max-width: 100%;
+		transform: none;
+		margin-bottom: 20px;
+
+		span {
+			align-items: center;
+			width: auto;
+		}
+
+		span + span {
+			margin-left: 15px;
+		}
+	}
+
+	i {
+		margin-right: 10px;
+	}
 }
 
-a.vec {
-	font-size: 1rem;
-	color: $color-boulder;
-	text-decoration: underline !important;
-	cursor: pointer;
+.workshops__location {
+	width: 100%;
+	padding-top: 10px;
+	padding-left: calc(10px + 30px);
+
+	@include sm {
+		padding-top: 0;
+	}
+
+	@include md {
+		padding-left: calc(15px + 30px);
+	}
+
+	i {
+		margin-right: 10px;
+	}
+
+	.workshop__modal & {
+		padding-left: 0;
+	}
 }
 
-a.vec:hover {
-	color: $color-black;
+.workshops__item-title {
+	width: 100%;
+	margin-top: 25px;
+	margin-bottom: 0;
+	font-size: 1.8em;
+	line-height: 1.2;
+
+	@include md {
+		margin-top: 15px;
+	}
 }
 
-.workshop-dude {
-	color: $color-boulder;
-	font-size: 14px;
-	padding: 5px 0;
-	text-align: left;
+.workshops__instructor-name {
+	margin-top: 15px;
+	margin-bottom: 10px;
+	font-size: 13px;
+
+	i {
+		margin-right: 10px;
+	}
 }
 
-.info-title {
-	display: inline-block;
-	margin: 10px;
-	padding: 5px 10px;
-	border-bottom: 2px solid $color-black;
+.workshops__item-link {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+	margin-top: auto;
+	margin-right: 25px;
+	margin-bottom: 25px;
+
+	@include sm {
+		justify-content: flex-end;
+		flex-direction: row;
+	}
+
+	a + a {
+		margin-top: 10px;
+
+		@include sm {
+			margin-top: 0;
+		}
+	}
 }
 
-.info {
-	margin: 20px;
+// modal
+.workshop__modal {
+	display: flex;
+	flex-wrap: wrap;
+	max-height: 80vw;
+	max-width: 80vw;
+
+	> div {
+		display: flex;
+		flex-wrap: wrap;
+		height: auto;
+		width: 100%;
+		max-width: 100%;
+
+		@include md {
+			max-width: 50%;
+		}
+	}
 }
 
-.workshop-desc {
-	margin: 20px;
-	font-size: 110%;
+.workshop__modal-top {
+	.workshop__modal-left {
+		background-color: $color-yellow;
+	}
+
+	.workshop__modal-right {
+		background-color: $color-red;
+	}
 }
 
-.workshop-dude-more {
-	text-align: left;
+.workshop__modal-bottom {
+	background-color: $color-blue;
+
+	.workshop__modal-right {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		img {
+			height: 100%;
+			max-height: 150px;
+    		width: auto;
+		}
+	}
+}
+
+.workshop__modal-left,
+.workshop__modal-right {
+	width: 100%;
+	height: auto;
+	padding: 25px;
+}
+
+.workshop__modal-top {
 }
