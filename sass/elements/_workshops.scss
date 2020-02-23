@@ -22,21 +22,45 @@
 		max-width: calc(100% / 3);
 	}
 
-	&:nth-child(5n + 1) {
+	&:nth-child(1),
+	&:nth-child(9),
+	&:nth-child(10),
+	&:nth-child(14),
+	&:nth-child(18),
+	&:nth-child(19),
+	&:nth-child(23),
+	&:nth-child(27),
+	&:nth-child(5) {
 		.workshops__content-wrapper {
 			background-color: $color-yellow;
 		}
 	}
 
-	&:nth-child(3n + 2) {
+	&:nth-child(6),
+	&:nth-child(7),
+	&:nth-child(11),
+	&:nth-child(15),
+	&:nth-child(16),
+	&:nth-child(20),
+	&:nth-child(24),
+	&:nth-child(25),
+	&:nth-child(2) {
 		.workshops__content-wrapper {
-			background-color: $color-red;
+			background-color: $color-blue;
 		}
 	}
 
-	&:nth-child(5n + 3) {
+	&:nth-child(3),
+	&:nth-child(8),
+	&:nth-child(12),
+	&:nth-child(13),
+	&:nth-child(17),
+	&:nth-child(21),
+	&:nth-child(22),
+	&:nth-child(26),
+	&:nth-child(4) {
 		.workshops__content-wrapper {
-			background-color: $color-blue;
+			background-color: $color-red;
 		}
 	}
 }
@@ -48,7 +72,6 @@
 	height: 100%;
 	min-height: 250px;
 	padding: 10px;
-	background-color: $color-yellow;
 
 	@include md {
 		padding: 15px;
@@ -100,7 +123,7 @@
 .workshops__location {
 	width: 100%;
 	padding-top: 10px;
-	padding-left: calc(10px + 30px);
+	padding-left: calc(10px + 12vw);
 
 	@include sm {
 		padding-top: 0;
@@ -168,8 +191,12 @@
 .workshop__modal {
 	display: flex;
 	flex-wrap: wrap;
-	max-height: 80vw;
-	max-width: 80vw;
+	max-height: 100vw;
+	max-width: 95vw;
+
+	@include md {
+		max-height: 80vw;
+	}
 
 	> div {
 		display: flex;
@@ -201,10 +228,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
+		padding-top: 0;
 
 		img {
 			height: 100%;
-			max-height: 150px;
+			max-height: 230px;
     		width: auto;
 		}
 	}
@@ -215,7 +243,12 @@
 	width: 100%;
 	height: auto;
 	padding: 25px;
-}
 
-.workshop__modal-top {
+	a {
+		color: $color-white;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }

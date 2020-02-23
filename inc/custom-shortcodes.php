@@ -70,13 +70,9 @@ function workshops_shortcode_function($atts) {
     $args = array(
         'post_type' => 'workshops',
         'posts_per_page' => '-1',
-        // 'orderby' => 'meta_value_num',
-        // 'order' => 'ASC',
-        // 'meta_query' => array(
-        //     array(
-        //         'key' => 'vrstni_red',
-        //     ),
-        // ),
+        'meta_key'  => 'workshop_date_time',
+        'orderby'   => 'meta_value',
+        'order'     => 'ASC',
     );
 
     $loop = new WP_Query($args);
@@ -125,51 +121,53 @@ function workshops_shortcode_function($atts) {
                         $output .= '<a href="#" class="modal-trigger" data-toggle="modal" data-target="simpleModal_' . $whId . '">';
                             $output .= 'Več info';
                         $output .= '</a>';
-                        $output .= '<a href="' . $whSignupLink . '" target="_blank">';
-                            $output .= 'Prijava';
-                        $output .= '</a>';
+                        if ($whSignupLink) {
+                            $output .= '<a href="' . $whSignupLink . '" target="_blank">';
+                                $output .= 'Prijava';
+                            $output .= '</a>';
+                        }
                     $output .= '</div>';
 
                 $output .= '</div>';
-            $output .= '</div>';
 
-            $output .= '<div class="modal" id="simpleModal_' . $whId . '">';
-                $output .= '<div class="workshop__modal">';
-                    $output .= '<div class="workshop__modal-top">';
+                $output .= '<div class="modal" id="simpleModal_' . $whId . '">';
+                    $output .= '<div class="workshop__modal">';
+                        $output .= '<div class="workshop__modal-top">';
 
-                        $output .= '<div class="workshop__modal-left">';
-                            $output .= '<div class="workshops__datetime">';
-                                $output .= '<span class="workshops__date"><i class="fas fa-calendar-day"></i>' . $whDateTime->format('j M') . '</span>';
-                                $output .= '<span class="workshops__time"><i class="fas fa-clock"></i>' . $whDateTime->format('H:i') . '</span>';
+                            $output .= '<div class="workshop__modal-left">';
+                                $output .= '<div class="workshops__datetime">';
+                                    $output .= '<span class="workshops__date"><i class="fas fa-calendar-day"></i>' . $whDateTime->format('j M') . '</span>';
+                                    $output .= '<span class="workshops__time"><i class="fas fa-clock"></i>' . $whDateTime->format('H:i') . '</span>';
+                                $output .= '</div>';
+
+                                $output .= '<div class="workshops__location">';
+                                    $output .= '<i class="fas fa-map-marker-alt"></i>';
+                                    $output .= $whLocation ? $whLocation : 'Sporočimo naknadno';
+                                $output .= '</div>';
+
+                                $output .= '<h1 class="workshops__item-title">';
+                                $output .= $whTitle;
+                                $output .= '</h1>';
+
                             $output .= '</div>';
 
-                            $output .= '<div class="workshops__location">';
-                                $output .= '<i class="fas fa-map-marker-alt"></i>';
-                                $output .= $whLocation ? $whLocation : 'Sporočimo naknadno';
+                            $output .= '<div class="workshop__modal-right">';
+                                $output .= $whDesc;
                             $output .= '</div>';
 
-                            $output .= '<h1 class="workshops__item-title">';
-                            $output .= $whTitle;
-                            $output .= '</h1>';
-
                         $output .= '</div>';
 
-                        $output .= '<div class="workshop__modal-right">';
-                            $output .= $whDesc;
+                        $output .= '<div class="workshop__modal-bottom">';
+
+                            $output .= '<div class="workshop__modal-left">';
+                                $output .= $whInstructorInfo;
+                            $output .= '</div>';
+
+                            $output .= '<div class="workshop__modal-right">';
+                                $output .= '<img src="' . $whInstructorImg . '" />';
+                            $output .= '</div>';
+
                         $output .= '</div>';
-
-                    $output .= '</div>';
-
-                    $output .= '<div class="workshop__modal-bottom">';
-
-                        $output .= '<div class="workshop__modal-left">';
-                            $output .= $whInstructorInfo;
-                        $output .= '</div>';
-
-                        $output .= '<div class="workshop__modal-right">';
-                            $output .= '<img src="' . $whInstructorImg . '" />';
-                        $output .= '</div>';
-
                     $output .= '</div>';
                 $output .= '</div>';
             $output .= '</div>';
