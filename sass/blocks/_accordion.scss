@@ -28,17 +28,19 @@
 					transform: rotate(0deg) !important;
 				}
 			}
+
+			.advgb-accordion-header-title {
+				padding-left: 15px;
+			}
 		}
 
 		.advgb-accordion-header-icon {
-            margin-right: 0;
+            margin-right: 15px;
 			transition: $transition-regular transform $ease-default;
 		}
 
         .advgb-accordion-body {
 			border-color: transparent !important;
-			padding-right: 0 !important;
-			padding-left: 0 !important;
 		}
 	}
 }
