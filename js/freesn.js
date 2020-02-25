@@ -2,6 +2,7 @@
     document.addEventListener('click', function (e) {
         e = e || window.event;
         var target = e.target || e.srcElement;
+        let keyCode = e.keyCode;
 
         if (target.hasAttribute('data-toggle') && target.getAttribute('data-toggle') == 'modal') {
             if (target.hasAttribute('data-target')) {
@@ -13,6 +14,23 @@
 
         // Close modal window with 'data-dismiss' attribute or when the backdrop is clicked
         if ((target.hasAttribute('data-dismiss') && target.getAttribute('data-dismiss') == 'modal') || target.classList.contains('modal')) {
+            var modal = document.querySelector('[class="modal open"]');
+            modal.classList.remove('open');
+            e.preventDefault();
+        }
+
+        if (keyCode === 27) {
+            var modal = document.querySelector('[class="modal open"]');
+            modal.classList.remove('open');
+            e.preventDefault();
+        }
+    }, false);
+
+    document.addEventListener('keydown', function (e) {
+        e = e || window.event;
+        let keyCode = e.keyCode;
+
+        if (keyCode === 27) {
             var modal = document.querySelector('[class="modal open"]');
             modal.classList.remove('open');
             e.preventDefault();

@@ -136,6 +136,7 @@ function workshops_shortcode_function($atts) {
 
                             $output .= '<div class="workshop__modal-left">';
                                 $output .= '<div class="workshops__datetime">';
+                                    $output .= '<a href="#" class="workshop__modal-close"><i class="fas fa-times" data-dismiss="modal"></i></a>';
                                     $output .= '<span class="workshops__date"><i class="fas fa-calendar-day"></i>' . $whDateTime->format('j M') . '</span>';
                                     $output .= '<span class="workshops__time"><i class="fas fa-clock"></i>' . $whDateTime->format('H:i') . '</span>';
                                 $output .= '</div>';
