@@ -67,3 +67,25 @@
 .background--white {
 	background-color: $color-white !important;
 }
+
+.image--scale {
+	a {
+		img {
+			transition: $transition-fast transform;
+		}
+
+		&:hover {
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+.link--hover {
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

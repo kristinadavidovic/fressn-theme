@@ -100,7 +100,7 @@
 	}
 
 	.workshop__modal & {
-		position: static;
+		position: relative;
 		max-width: 100%;
 		transform: none;
 		margin-bottom: 20px;
@@ -189,13 +189,18 @@
 
 // modal
 .workshop__modal {
-	display: flex;
-	flex-wrap: wrap;
-	max-height: 100vw;
-	max-width: 95vw;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 90vh;
+    max-width: 95vw;
+    margin-top: 0;
+    overflow-y: auto;
 
 	@include md {
 		max-height: 80vw;
+		margin-top: 0;
+		width: auto;
+		max-width: 80vw;
 	}
 
 	> div {
@@ -222,7 +227,10 @@
 }
 
 .workshop__modal-bottom {
+	overflow-y: auto;
+    max-height: 85vh;
 	background-color: $color-blue;
+	font-size: 13px;
 
 	.workshop__modal-right {
 		display: flex;
@@ -232,7 +240,7 @@
 
 		img {
 			height: 100%;
-			max-height: 230px;
+			max-height: 200px;
     		width: auto;
 		}
 	}
@@ -242,7 +250,7 @@
 .workshop__modal-right {
 	width: 100%;
 	height: auto;
-	padding: 25px;
+	padding: 15px;
 
 	a {
 		color: $color-white;
@@ -250,5 +258,15 @@
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+}
+
+.workshop__modal-close {
+	position: absolute;
+    right: 0;
+	top: 6px;
+
+	@include md() {
+		position: fixed;
 	}
 }
