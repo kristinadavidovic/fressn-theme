@@ -214,6 +214,10 @@
 			max-width: 50%;
 		}
 	}
+
+	p {
+		margin-bottom: 1em;
+	}
 }
 
 .workshop__modal-top {
@@ -223,6 +227,7 @@
 
 	.workshop__modal-right {
 		background-color: $color-red;
+		font-size: 13px;
 	}
 }
 
